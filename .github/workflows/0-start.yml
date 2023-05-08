@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - develop
 
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -79,7 +79,7 @@ jobs:
           git push --set-upstream origin $BRANCH
           
           echo "Restore main"
-          git checkout main
+          git checkout develop
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
