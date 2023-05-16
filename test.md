@@ -108,6 +108,20 @@ const completeName = name + lastname;
 const nickname = "jfspeed";
 
 console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+
+RTA:
+```
+function nombreCompleto(name, lastName) {
+    return name + ' ' + lastName
+}
+
+function saludo(name, lastname, username) {
+  const completeName = nombreCompleto(name, lastname);
+  
+
+console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + username + ".");
+}
+
 ```
 
 
@@ -116,8 +130,18 @@ console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + n
 ### 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
 
 - ¿Qué es un condicional?
+son la forma en la que ejecutamos un bloque de codigo u otro dependioendo de alguna validacion o condicion 
+
 - ¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?
+
+IF (else  y else if), Switch
+El condicional if  (con else y else if) nos permite hacer validaciones completamente distintas (si asi lo queremos) en cada validacionan o condicional. 
+en cambio, en el swicht todos las cases se comparan con la misma variable o condicion que definimos en el switch.
+
+
 - ¿Puedo combinar funciones y condicionales?
+si, las funciones pueden encapsular cuanlquier bloque de codigo incluyendo condionales
+
 
 ### 2️⃣ Replica el comportamiento del siguiente código que usa la sentencia switch utilizando if, else y else if:
 
@@ -134,7 +158,7 @@ switch (tipoDeSuscripcion) {
    case "Expert":
        console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
        break;
-   case "ExpertPlus":
+   case "ExpertDUO":
        console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
        break;
 }
