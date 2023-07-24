@@ -163,10 +163,47 @@ switch (tipoDeSuscripcion) {
        break;
 }
 ```
+rta:
+,,,
+function conseguirTipoSuscripcion(suscripcion) { 
+    if (suscripcion == "Free") {
+        console.log("Solo puedes tomar los cursos gratis");
+        return;
+    }
+    
+    if (suscripcion == 'basic') {
+        console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+        return;
+    }
+
+    if (suscripcion == 'Expert') {
+        console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+        return;
+    }
+
+    if (suscripcion == 'ExpertDuo') {
+        console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+        return;
+    }
+}
+,,,
 
 ### 3️⃣ Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
 
 > 💡 Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays y un solo condicional. 😏
+
+RTA:
+_____________
+function conseguirTipoSuscripcion(suscripcion) {
+    if (tipoDeSuscripciones[suscripcion]){
+        console.log(tipoDeSuscripciones[suscripcion])
+        return;
+    }
+
+    console.warn('ese tipo de suscripcion no existe')
+};
+
+______________
 
 
 ## Ciclos
@@ -174,9 +211,18 @@ switch (tipoDeSuscripcion) {
 ### 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
 
 - ¿Qué es un ciclo?
+RTA:
+es la forma de ejecutar un bloque de codigo hasta que se cumpla cierta condifcion 
 - ¿Qué tipos de ciclos existen en JavaScript?
+RTA:
+ while, do while, for
 - ¿Qué es un ciclo infinito y por qué es un problema?
+RTA:
+es cuando la validacion de nuestras condicionales nunca se cunplem y terminan toteando (dañando) la aplicacion (e.j. cuando ya no puede mas el navegador de tanta ejecucion de ese bloque de codigo).
+
 - ¿Puedo mezclar ciclos y condicionales?
+RTA:
+si, aunque los ciclos son condicionales una especie de condicionales, nada nos impide agregar mas condicionales dentro del ciclo
 
 ### 2️⃣ Replica el comportamiento de los siguientes ciclos for utilizando ciclos while:
 
@@ -184,35 +230,107 @@ switch (tipoDeSuscripcion) {
 for (let i = 0; i < 5; i++) {
     console.log("El valor de i es: " + i);
 }
+RTA
+____________________________________________
+let i = 0;
+
+while (i < 5) {
+    console.log("El valor de i es: " + i); i++;
+}
+_____________________________________________
+....
 
 for (let i = 10; i >= 2; i--) {
     console.log("El valor de i es: " + i);
 }
 ```
+RTA
+_____________________________________________
+let i = 10;
+
+while (i >= 2) {
+    console.log("El valor de i es: " + i); i--;
+}
+______________________________________________
+
 
 ### 3️⃣ Escribe un código en JavaScript que le pregunte a los usuarios cuánto es `2 + 2`. Si responden bien, mostramos un mensaje de felicitaciones, pero si responden mal, volvemos a empezar.
 
 > 💡 Pista: puedes usar la función prompt de JavaScript.
+RTA
+__________________
 
+while (respuesta != '4') {
+    let pregunta = prompt('¿Cuanto es 2 + 2?')
+    respuesta = pregunta;
+}
+__________________
 
 ## Listas
 
 ### 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
 
 - ¿Qué es un array?
+RTA
+____________________________
+es una lista de elementos.
+-------
+const array = [1, 'jaja', true, false];
+___________________________
 - ¿Qué es un objeto?
+RTA
+_____________________
+es una lista de elementos pero cada elemento tiene un nombre clave
+...
+const obj = {
+    nombre: 'Fulanito',
+    edad: 3,
+};
+....
+______________________
 - ¿Cuándo es mejor usar objetos o arrays?
+RTA
+________________________
+Arrays cuando lo que haremos es lo mmismo que en todos los demas (la regla se puede imcumplir) mientras que un objeto cuando los nombres de cada elemento son importantes para nuestro algoritmo.
+________________________
 - ¿Puedo mezclar arrays con objetos o incluso objetos con arrays?
+RTA
+________________________
+Si, los arrays pueden guardar objetos. y los objetos pueden guardar arrays entre sus propiedades.
+________________________
 
 ### 2️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.
+RTA
+____________________
+ function imprimirPrimerElementoArray(arr) { 
+    console.log(arr[1])
+}
 
+imprimirPrimerElementoArray(['juanita', 'rigoberto','natalia'])
+____________________
 ### 3️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).
+RTA
+____________
+ function imprimirElementoPorElemento(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+    }
+}
+______________-
 
 ### 4️⃣ Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo).
+RTA:
+______________
+function imprimirElementoPorElementoObjeto(obj) {
+    const arr = Object.values(obj);
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+    }
+}
+____________
 
 
 ## ¿Cómo te fue? 🏆
-
 **¡Felicidades por completar la prueba de JavaScript!** Confío en que hayas completado cada paso y hayas pausado para repasar los temas de los ejercicios que se te complicaron.
 
 Ahora sí, continúa a la siguiente clase, pero recuerda que **ya no puedes abandonar el curso**, debes completarlo hasta el final. No importa cuánto tiempo te tome. **Yo sé que tú puedes. Y tú deberías de saberlo también.**
